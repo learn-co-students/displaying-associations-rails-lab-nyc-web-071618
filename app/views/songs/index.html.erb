@@ -1,0 +1,9 @@
+Hello Song Index
+
+<ul>
+  <%= counter = 0 %>
+  <% @song_list.each do |list| %>
+    <li> <%= link_to list, song_path(@songs[counter]) %> </li>
+    <% counter += 1 %>
+  <% end %>
+</ul>

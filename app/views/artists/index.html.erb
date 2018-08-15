@@ -1,0 +1,12 @@
+Hello Artist Index
+
+<ul>
+  <% counter = 0 %>
+  <% @artists.each do |artist| %>
+  <li>
+    <%= @song_counts[counter] %> songs
+    <%= artist.name %>
+    <% counter += 1 %>
+  </li>
+  <% end %>
+</ul>
