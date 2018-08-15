@@ -1,12 +1,22 @@
 class ArtistsController < ApplicationController
   def index
+    @artists = Artist.all
+
+    @song_counts = @artists.map do |artist|
+      artist.song_count
+    end
   end
 
   def show
+    @song = Song.find_by(artist_id: params[:id])
+
+    @songs = Song.where("artist_id = #{params[:id]}")
+    render :show
   end
 
   def new
     @artist = Artist.new
+    binding.pry
   end
 
   def create
